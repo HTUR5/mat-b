@@ -23,11 +23,11 @@ TEST_CASE("Good input") {
 													 "@-------@\n"
 													 "@@@@@@@@@"));
 
-    CHECK(nospaces(mat(9, 7, '-', '@')) == nospaces("----------\n"
+    CHECK(nospaces(mat(9, 7, '-', '@')) == nospaces("---------\n"
 													 "-@@@@@@@-\n"
 													 "-@-----@-\n"
 													 "-@-@@@-@-\n"
-                                                     "----------\n"
+                                                     "-@-----@-\n"
 													 "-@@@@@@@-\n"
 													 "-@-----@-"));
 
@@ -71,12 +71,6 @@ TEST_CASE("not good char") {
     CHECK_THROWS(mat(2, 1, '$', 2));
     CHECK_THROWS(mat(1, 2, 4, '%'));
     CHECK_THROWS(mat(1, 2, ' ', ' '));                                                          
-}
-
-TEST_CASE("not numbers") {
-    CHECK_THROWS(mat( '$', '%', '$', '%'));
-    CHECK_THROWS(mat( '$', 1, '$', '%'));
-    CHECK_THROWS(mat( 1, '%', '$', '%'));                                                      
 }
 
 TEST_CASE("non positive numbers") {
